@@ -1,0 +1,8 @@
+services:
+  mcp-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    volumes:
+      - ./test-client:/app/client
+    command: ["sh", "-c", "cd /app/client && npm install && npm test"]
